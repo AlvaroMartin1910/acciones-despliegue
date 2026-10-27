@@ -1,0 +1,24 @@
+name: Comprobacion archivos (compuesta)
+description: Comprueba si estan los archivos de documentacion del repo
+runs:
+  using: composite
+  steps:
+    - name: Buscar documentacion repo
+      shell: bash
+      run: | 
+        errores=0
+        
+        for archivo in README.md LICENSE CONTRIBUTING.md; do
+          if [ -f $archivo ]; then
+            echo "OK existe: $archivo"
+          else
+            echo "ERROR existe: $archivo"
+            errores=$((errores+1))
+          fi  
+        done
+
+        if [ "$errores" -gt 0 ]; then
+          echo "Faltan archivos"
+          exit 1
+        fi
+        echo "Todos los archivos estan correctos"
