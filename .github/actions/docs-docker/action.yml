@@ -1,0 +1,5 @@
+name: Comprobacion de archivos (Docker)
+description: Comprueba la documentacion del repo con Docker
+runs:
+  using: docker
+  image: Dockerfile
