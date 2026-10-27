@@ -11,5 +11,5 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Ejecutar nuestra accion
-        uses: ./github/action/docs-docker
+        uses: ./.github/actions/docs-docker
   
