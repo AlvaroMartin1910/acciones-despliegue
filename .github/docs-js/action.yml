@@ -1,5 +1,0 @@
-name: Comprobar archivos (JavaScript)
-description: Comprobar los documentos del repo con JavaScript
-runs:
-  using: node24
-  main: index.js
