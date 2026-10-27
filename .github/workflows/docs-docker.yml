@@ -1,0 +1,15 @@
+name: Probar accion en local (docker)
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v7
+
+      - name: Ejecutar nuestra accion
+        uses: ./github/action/docs-docker
+  
